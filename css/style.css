@@ -26,11 +26,22 @@ body {
         "header header header header header header"
         "welcome welcome welcome welcome welcome welcome"
         "prices prices prices prices prices prices"
-        "footer footer footer footer footer footer ";
+        "footer footer footer footer footer footer";
+}
+
+.button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #171717;
+    background-color: #54eabd;
+}
+
+.button--cancel {
+    background-color: #ea7254;
 }
 
 /* navigation bar */
-
 .navigation {
     grid-area: nav;
     padding: 1rem 0;
@@ -124,7 +135,7 @@ body {
     width: 100%;
 }
 
-/* --- table of different prices and the advantages --- */
+/* table of different prices and the advantages */
 .prices {
     margin: 2rem;
     grid-area: prices;
@@ -177,14 +188,9 @@ body {
     display: flex;
 }
 
-.prices__button {
+.button--prices {
     margin-top: 1rem;
     flex: 1;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    color: #171717;
-    background-color: #54eabd;
 }
 
 /* footer with address and links to socials */
@@ -229,6 +235,117 @@ body {
     margin: 0;
 }
 
+/* css for booking-page */
+.wrapper--booking {
+    grid-template-areas:
+        "nav nav nav nav nav nav"
+        "header header header header header header"
+        "booking booking booking booking booking booking"
+        "footer footer footer footer footer footer";
+}
+
+.booking {
+    grid-area: booking;
+    display: flex;
+    margin: 0 2rem 2rem 2rem;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px 15px 0 0;
+    border: solid 1px #525252;
+    overflow: hidden;
+    padding: 1.5rem;
+    flex: 1;
+}
+
+.calendar > header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: solid 1px #525252;
+    padding-bottom: 0.8rem;
+}
+
+.calendar > header p {
+    margin: 0;
+}
+
+.calendar > header aside {
+    display: flex;
+}
+
+.calendar > header button {
+    fill: #a3a3a3;
+    background-color: #262626;
+    border: none;
+    display: flex;
+}
+
+.calendar > header button:hover {
+    fill: #54eabd;
+}
+
+.calendar__month, .calendar__year{
+    font-size: 1.5rem;
+}
+
+.calendar__month {
+    font-weight: 400;
+}
+
+.calendar__year {
+    font-weight: 300;
+    color: #a3a3a3;
+}
+
+.calendar__date {
+    display: flex;
+    gap: 5px;
+}
+
+.calendar__dates {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: auto;
+}
+
+.calendar__day-name {
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.calendar__day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.calendar__day--inactive {
+    color: #a3a3a3;
+}
+
+.calendar__day--selected p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #54eabd;
+}
+
+.calendar__day:nth-child(7n + 6),
+.calendar__day:nth-child(7n + 7) {
+    background-color: #171717;
+}
+
+/* addapt for tablet & mobile */
 @media screen and (max-width: 768px) {
     .logo {
         height: 8rem;

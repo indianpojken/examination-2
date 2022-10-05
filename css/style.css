@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+
+    color: #e5e5e5;
+    background-color: #171717;
+}
+
+.wrapper {
+    background-color: #262626;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: auto;
+    grid-template-areas:
+        "nav nav nav nav nav nav"
+        "header header header header header header"
+        "welcome welcome welcome welcome welcome welcome"
+        "prices prices prices prices prices prices"
+        "footer footer footer footer footer footer ";
+}
+
+/* navigation bar */
+
+.navigation {
+    grid-area: nav;
+    padding: 1rem 0;
+}
+
+.navigation ol {
+    display: flex;
+    justify-content: center;
+
+    list-style-type: none;
+
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation__link {
+    font-size: 1rem;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    padding: 10px;
+
+    color: #a3a3a3;
+
+    transition: all 0.1s ease;
+}
+
+.navigation__link:hover {
+    color: #171717;
+    background-color: #54eabd;
+
+    border-radius: 5px;
+}
+
+.navigation__link--active {
+    color: #54eabd;
+}
+
+/* logo */
+
+.logo {
+    grid-area: header;
+    margin: 2rem 0;
+    height: 12rem;
+}
+
+.logo__image {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/logo/bonz.ai-logo-color-portrait.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* welcome text */
+.welcome {
+    grid-area: welcome;
+    display: flex;
+    flex-direction: row;
+}
+
+.welcome__text {
+    display: flex;
+    flex-direction: column;
+    flex: 0;
+    min-width: 22rem;
+    margin: 0 1rem 1rem 1rem;
+}
+
+.welcome__text h2,
+.welcome__text h3 {
+    font-weight: 500;
+    margin: 0;
+    align-self: center;
+}
+
+.welcome__text h3 {
+    color: #a3a3a3;
+}
+
+.welcome__image {
+    flex: 1;
+    margin: 0;
+}
+
+.welcome__image img {
+    width: 100%;
+}
+
+/* --- table of different prices and the advantages --- */
+.prices {
+    margin: 2rem;
+    grid-area: prices;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.prices__price-example {
+    padding: 1.5rem;
+    border-radius: 15px 15px 0 0;
+    border: solid 1px #525252;
+    margin: 1rem 0;
+    max-width: 290px;
+}
+
+.prices__price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px #525252;
+    margin-bottom: 0.8rem;
+    height: 50px;
+}
+
+.prices__price h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 0 0.4rem 0;
+}
+
+.prices__nights {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding-left: 0.4rem;
+    margin: 0 0 0.4rem 0;
+    color: #737373;
+}
+
+.prices__percentage-saved {
+    font-size: 0.6rem;
+    background-color: #54eabd;
+    color: #171717;
+    padding: 8px 4px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+}
+
+.prices__book {
+    display: flex;
+}
+
+.prices__button {
+    margin-top: 1rem;
+    flex: 1;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #171717;
+    background-color: #54eabd;
+}
+
+/* footer with address and links to socials */
+.footer {
+    grid-area: footer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem;
+    border-top: solid 4px #171717;
+}
+
+.footer__title {
+    font-weight: 500;
+    margin: 0 0 0.2rem 0;
+}
+
+.footer__box {
+    padding: 1rem;
+}
+
+.footer__socials>ul {
+    display: flex;
+    margin: 0;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+}
+
+.footer__socials svg {
+    fill: #54eabd;
+    width: 2rem;
+    height: 2rem;
+}
+
+.footer__address {
+    color: #a3a3a3;
+    font-style: normal;
+}
+
+.footer__address p {
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        height: 8rem;
+    }
+
+    .welcome {
+        flex-direction: column;
+    }
+}

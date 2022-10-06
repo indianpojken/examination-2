@@ -346,6 +346,79 @@ input[type="number"] {
     color: #54eabd;
 }
 
+/* css for about-page */
+.wrapper--about {
+    grid-template-areas:
+        "nav nav nav nav nav nav"
+        "header header header header header header"
+        "hotel-information hotel-information hotel-information hotel-information hotel-information hotel-information"
+        "facilities facilities facilities facilities facilities facilities"
+        "footer footer footer footer footer footer";
+}
+
+.hotel-information {
+    grid-area: hotel-information;
+}
+
+.hotel-information__image {
+    flex: 1;
+    margin: 0;
+}
+
+.hotel-information__image img {
+    width: 100%;
+}
+
+.hotel-information__text p {
+    max-width: 55rem;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    color: #a3a3a3;
+}
+
+.facilities {
+    grid-area: facilities;
+    display: flex;
+    flex-direction: column;
+}
+
+.facilities__facility {
+    display: flex;
+    justify-content: center;
+    margin: 0 1rem 1rem 1rem;
+    gap: 4rem;
+    padding: 1rem 0;
+    background-color: #171717;
+
+}
+
+.facilities__facility:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+}
+
+.facilities__text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.facilities__text h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.facilities__text h3 {
+    font-weight: 400;
+    color: #a3a3a3;
+    margin: 0;
+}
+
+.facilities__icon {
+    fill: #54eabd;
+    width: 10rem;
+}
+
 /* addapt for tablet & mobile */
 @media screen and (max-width: 768px) {
     .logo {
@@ -373,5 +446,27 @@ input[type="number"] {
 
     .booking__rooms {
         grid-template-columns: 1fr;
+    }
+
+    .facilities__facility {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .facilities__facility:nth-child(2n + 1) {
+        flex-direction: column;
+    }
+
+    .facilities__text {
+        text-align: center;
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .booking__book {
+        flex-direction: column;
     }
 }

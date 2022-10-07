@@ -331,10 +331,10 @@ input[type="number"] {
 
 .booking__book {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem;
+    padding-top: 1rem;
+    margin: auto 1rem 1rem 1rem;
 }
 
 .booking__pricing {
